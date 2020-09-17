@@ -1,2 +1,6 @@
-# Node-MVC-architecture
-MVC architecture template in node.js
+# Node.js MVC Template
+
+* Node framework: Express;
+* ORM: Sequelize;
+* BD: MySql;
+* Template engine: EJS.
