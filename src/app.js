@@ -4,7 +4,6 @@ const path = require('path');
 const ejsLayouts = require('express-ejs-layouts');
 
 const routes = require('./routes');
-require('./database');
 
 const app = express();
 
