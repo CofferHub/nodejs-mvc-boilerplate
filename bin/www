@@ -1,7 +1,18 @@
 #!/usr/bin/env node
 
+const http = require('http');
 const app = require('../src/app');
+
+const options = {}; // Http createServer configuration options
 
 const port =  process.env.PORT || 3000;
 
-app.listen( port, () => console.log(`Server listening on port: ${port}`));
+const server = http.createServer(options, app);
+
+server.listen(port, () => {
+  let addr = server.address();
+  let bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+    console.log(`Server listening ${bind}`);
+});
