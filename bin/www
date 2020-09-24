@@ -5,14 +5,14 @@ const app = require('../src/app');
 
 const options = {}; // Http createServer configuration options
 
-const port =  process.env.PORT || 3000;
+const PORT =  process.env.PORT || 3000;
 
 const server = http.createServer(options, app);
 
-server.listen(port, () => {
-  let addr = server.address();
-  let bind = typeof addr === 'string'
+server.listen(PORT, () => {
+  const addr = server.address();
+  const bindServer = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-    console.log(`Server listening ${bind}`);
+    console.log(`Server listening ${bindServer}`);
 });
