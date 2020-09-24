@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint ./src ./test --ext .ts",
+    "lint:fix": "eslint ./src ./test --ext .ts --fix"
   },
   "repository": {
     "type": "git",
@@ -36,7 +39,8 @@
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
-    "sequelize-cli": "^6.2.0",
-    "nodemon": "^2.0.4"
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^6.2.0"
   }
 }
