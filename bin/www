@@ -10,9 +10,9 @@ const PORT =  process.env.PORT || 3000;
 const server = http.createServer(options, app);
 
 server.listen(PORT, () => {
-  const addr = server.address();
-  const bindServer = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  const serverAddress = server.address();
+  const bindServer = typeof serverAddress === 'string'
+    ? 'pipe ' + serverAddress
+    : 'port ' + serverAddress.port;
     console.log(`Server listening ${bindServer}`);
 });
