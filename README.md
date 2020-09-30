@@ -1,4 +1,9 @@
 # Node.js MVC Template
+
+<img src="https://images.unsplash.com/photo-1600051831735-9e0b949949b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" width="400px" height="auto" />
+
+<span>Photo by <a href="https://unsplash.com/@jefferyho?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jeffery Ho</a> on <a href="https://unsplash.com/s/photos/architecture-green?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
 > Here goes your awesome project description!
 
 ## Table of contents
