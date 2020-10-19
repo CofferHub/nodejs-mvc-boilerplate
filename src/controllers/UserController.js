@@ -1,63 +1,63 @@
 const { User } = require('../models');
 
-exports.index =  (req , res) => {
-     User.findAll()
-     .then( users => {
-          res.render('page', { users });
-     }).catch(err => {
-          console.error(err);
-     });
-}
+exports.index = (request, response) => {
+  User.findAll()
+    .then((users) => {
+      response.render('page', { users });
+    }).catch((error) => {
+      console.error(error);
+    });
+};
 
-exports.view = (req, res) => {
-     const { id } = req.params; 
-     User.findOne({ 
-          where: {id}
-     }).then( users => {
-          res.render('page/view', { users });
-     }).catch(err => {
-          console.error(err);
-     });
-}
+exports.view = (request, response) => {
+  const { id } = request.params;
+  User.findOne({
+    where: { id },
+  }).then((users) => {
+    response.render('page/view', { users });
+  }).catch((error) => {
+    console.error(error);
+  });
+};
 
-exports.viewUpdate = (req, res) => {
-     const { id } = req.params; 
-     User.findOne({ 
-          where: {id}
-     }).then( users => {
-          res.render('page/update', { users });
-     }).catch(err => {
-          console.error(err);
-     });
-}
+exports.viewUpdate = (request, response) => {
+  const { id } = request.params;
+  User.findOne({
+    where: { id },
+  }).then((users) => {
+    response.render('page/update', { users });
+  }).catch((error) => {
+    console.error(error);
+  });
+};
 
-exports.create = (req , res) => { 
-     User.cerate(req.body)
-     .then( user => {
-          res.render('page', { user });
-     }).catch(err => {
-          console.error(err);
-     });
-}
+exports.create = (request, response) => {
+  User.cerate(request.body)
+    .then((user) => {
+      response.render('page', { user });
+    }).catch((error) => {
+      console.error(error);
+    });
+};
 
-exports.update = (req , res) => { 
-     const { id } = req.params; 
-     User.update(req.body, {
-          where: { id }
-     }).then( user => {
-          res.render('page', { user });
-     }).catch(err => {
-          console.error(err);
-     });
-}
+exports.update = (request, response) => {
+  const { id } = request.params;
+  User.update(request.body, {
+    where: { id },
+  }).then((user) => {
+    response.render('page', { user });
+  }).catch((error) => {
+    console.error(error);
+  });
+};
 
-exports.delete = (req , res) => {
-     const { id } = req.params; 
-     User.destroy({
-          where: { id }
-     }).then( user => {
-          res.render('page');
-     }).catch(err => {
-          console.error(err);
-     });
-}
+exports.delete = (request, response) => {
+  const { id } = request.params;
+  User.destroy({
+    where: { id },
+  }).then(() => {
+    response.render('page');
+  }).catch((error) => {
+    console.error(error);
+  });
+};
