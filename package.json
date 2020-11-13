@@ -5,13 +5,15 @@
   "main": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "start:pm2": "pm2 ./bin/www --name=node_mvc",
+    "dev": "nodemon --exec sucrase-node ./bin/www",
+    "dev:sucrase": "sucrase-node ./bin/www",
     "test": "jest --config ./jest.config.json",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint ./src ./test --ext .ts",
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
-    "build": "npx babel src --out-dir dist --copy-files --no-copy-ignored",
-    "clean": "rm -fr dist"
+    "clean": "rm -fr dist",
+    "build": "sucrase ./src -d ./dist --transforms imports"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,6 @@
   },
   "homepage": "https://github.com/AtilaAssuncao/node-mvc-template#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.11.5",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
@@ -33,16 +34,14 @@
     "express-ejs-layouts": "^2.5.0",
     "materialize-css": "^1.0.0-rc.2",
     "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "multer-gridfs-storage": "^4.2.0",
     "mysql2": "^2.1.0",
-    "sequelize": "^5.22.3"
+    "sequelize": "^5.22.3",
+    "sucrase": "^3.16.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",

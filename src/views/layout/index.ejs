@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/materialize.min.css">
     <title></title>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
-        <%- include('components/_header'); -%>
+        <%- include('_partials/_header'); -%>
     </header>
 
     <main>
@@ -20,9 +33,10 @@
     </main>
 
     <footer>
-        <%- include('components/_footer'); -%>
+        <%- include('_partials/_footer'); -%>
     </footer>
 
     <script src="/js/materialize.min.js"></script>
 </body>
+
 </html>

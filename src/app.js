@@ -1,13 +1,16 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const ejsLayouts = require('express-ejs-layouts');
+import express from 'express';
+import bodyParser from "body-parser";
+import path from 'path';
+import ejsLayouts from 'express-ejs-layouts';
+import mogran from 'morgan';
 
-const routes = require('./routes');
+import routes from './routes';
 
 const app = express();
 
 app.use(express.json());
+
+app.use(mogran('dev'));
 
 // Body Parser
 app.use(bodyParser.text());
@@ -28,5 +31,4 @@ app.use(express.static(path.join(__dirname , '..', 'node_modules', 'materialize-
 // Rotas
 app.use(routes);
 
-
-module.exports = app;
+export default app;

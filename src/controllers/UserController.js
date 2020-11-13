@@ -1,9 +1,9 @@
-const { User } = require('../models');
+import { User } from "../models";
 
 exports.index =  (req , res) => {
      User.findAll()
      .then( users => {
-          res.render('page', { users });
+          res.render('login/register', { users });
      }).catch(err => {
           console.error(err);
      });
