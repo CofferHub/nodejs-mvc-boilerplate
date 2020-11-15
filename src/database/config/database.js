@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   development: {
     username: 'root',
     password: null,
