@@ -1,0 +1,50 @@
+<section class="page-contact">
+    <h1>Contact</h1>
+    <p>
+        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+    </p>
+
+    <div class="row">
+        <div class="col s12 m8 l6">
+            <form action="" method="post">
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate" valide>
+                            <label for="name">Name</label>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate" valide>
+                            <label for="email">Email</label>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input id="subject" type="text" class="validate" validate>
+                            <label for="subject">Subject</label>
+                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="body" class="materialize-textarea" data-length="120"></textarea>
+                        <label for="body">Body</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light col s12 btn-large blue-coffer-hub " type="submit" name="action">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    $(document).ready(function() {
+        M.textareaAutoResize($('textarea#body').val())
+    });
+</script>

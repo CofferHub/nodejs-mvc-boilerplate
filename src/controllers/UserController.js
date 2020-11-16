@@ -1,13 +1,25 @@
 import { User } from "../models";
 
-exports.index =  (req , res) => {
-     User.findAll()
-     .then( users => {
-          res.render('login/register', { users });
-     }).catch(err => {
-          console.error(err);
-     });
+const getLogin =  (req , res) => {
+     res.render('page/login', {session: false});
 }
+
+const getRegister = (req, res) => {
+     res.render('page/register', {session: false});
+}
+
+const getIndex = (req, res) => {
+     res.render('page');
+}
+
+const getAbout = (req, res) => {
+     res.render('page/about');
+}
+
+const getContact = (req, res) => {
+     res.render('page/contact');
+}
+
 
 exports.view = (req, res) => {
      const { id } = req.params; 
@@ -61,3 +73,5 @@ exports.delete = (req , res) => {
           console.error(err);
      });
 }
+
+export default { getLogin, getRegister, getIndex, getAbout, getContact }
