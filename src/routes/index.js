@@ -4,10 +4,10 @@ import { isAuthenticated, authenticateLogin, authenticateRegister } from '../con
 
 const router = Router();
 
+// Rotas Get
 router.get('/', UserController.getIndex);
 router.get('/about', UserController.getAbout);
 router.get('/contact', UserController.getContact);
-
 router.get('/login', UserController.getLogin);
 router.get('/register', UserController.getRegister);
 router.get('/logout', UserController.getLogout);
@@ -15,6 +15,7 @@ router.get('/logout', UserController.getLogout);
 // Rota autenticada
 router.get('/auth', isAuthenticated, UserController.getAuth);
 
+// Rotas Post
 router.post('/register', authenticateRegister);
 router.post('/login', authenticateLogin);
 

@@ -7,10 +7,30 @@ export default (sequelize, DataTypes) => {
   class User extends Model {};
 
   User.init({
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    password_key: DataTypes.STRING
+    username: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {msg: ''} // ADD mensagem de erro
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {msg: ''} // ADD mensagem de erro
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {msg: ''} // ADD mensagem de erro
+      }
+    },
+    password_key: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {msg: ''} // ADD mensagem de erro
+      }
+    }
   }, {
     sequelize,
     modelName: 'User',
@@ -26,7 +46,6 @@ export default (sequelize, DataTypes) => {
   });
   
   User.comparePassword = async (password, user) => {
-    console.log('\n\n\n\n tt \n\n\n\n');
     const hashVerify = await crypto.pbkdf2Sync(password, user.password_key, 10000, 64, 'sha512').toString('hex');
     return user.password_hash === hashVerify;
   }

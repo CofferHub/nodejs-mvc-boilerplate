@@ -31,20 +31,6 @@ const getLogout = (req, res) => {
      res.redirect('/'); // ADD rota depois do logout
 }
 
-
-// Rotas POST
-// const postRegister = (req, res) => {
-//      const {username, email, password} = req.body;
-     
-//      User.create({username, email, password})
-//           .then((result) => {
-//                res.redirect('/auth'); // ADD rota de successo no registro
-//           })
-//           .catch((err) => { 
-//                res.redirect('/register'); // ADD rota de falha no registro
-//           });
-// }
-
 export default { 
      getLogin, 
      getRegister, 
@@ -53,5 +39,4 @@ export default {
      getContact, 
      getAuth, 
      getLogout,
-     // postRegister
 };
