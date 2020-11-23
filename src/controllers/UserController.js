@@ -1,5 +1,7 @@
-import { User } from "../models";
+import {User} from "../models";
 
+
+// Rotas GET
 const getLogin =  (req , res) => {
      res.render('page/login', {session: false});
 }
@@ -20,58 +22,36 @@ const getContact = (req, res) => {
      res.render('page/contact');
 }
 
-
-exports.view = (req, res) => {
-     const { id } = req.params; 
-     User.findOne({ 
-          where: {id}
-     }).then( users => {
-          res.render('page/view', { users });
-     }).catch(err => {
-          console.error(err);
-     });
+const getAuth = (req, res) => {
+     res.render('page/auth');
 }
 
-exports.viewUpdate = (req, res) => {
-     const { id } = req.params; 
-     User.findOne({ 
-          where: {id}
-     }).then( users => {
-          res.render('page/update', { users });
-     }).catch(err => {
-          console.error(err);
-     });
+const getLogout = (req, res) => {
+     req.logout();
+     res.redirect('/'); // ADD rota depois do logout
 }
 
-exports.create = (req , res) => { 
-     User.cerate(req.body)
-     .then( user => {
-          res.render('page', { user });
-     }).catch(err => {
-          console.error(err);
-     });
-}
 
-exports.update = (req , res) => { 
-     const { id } = req.params; 
-     User.update(req.body, {
-          where: { id }
-     }).then( user => {
-          res.render('page', { user });
-     }).catch(err => {
-          console.error(err);
-     });
-}
+// Rotas POST
+// const postRegister = (req, res) => {
+//      const {username, email, password} = req.body;
+     
+//      User.create({username, email, password})
+//           .then((result) => {
+//                res.redirect('/auth'); // ADD rota de successo no registro
+//           })
+//           .catch((err) => { 
+//                res.redirect('/register'); // ADD rota de falha no registro
+//           });
+// }
 
-exports.delete = (req , res) => {
-     const { id } = req.params; 
-     User.destroy({
-          where: { id }
-     }).then( user => {
-          res.render('page');
-     }).catch(err => {
-          console.error(err);
-     });
-}
-
-export default { getLogin, getRegister, getIndex, getAbout, getContact }
+export default { 
+     getLogin, 
+     getRegister, 
+     getIndex, 
+     getAbout, 
+     getContact, 
+     getAuth, 
+     getLogout,
+     // postRegister
+};

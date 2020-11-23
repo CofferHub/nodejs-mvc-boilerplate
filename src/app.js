@@ -1,16 +1,43 @@
+'use strict';
+// Import Models[node_modules]
 import express from 'express';
-import bodyParser from "body-parser";
+import bodyParser from 'body-parser';
 import path from 'path';
 import ejsLayouts from 'express-ejs-layouts';
+import session from 'express-session';
+import passport from 'passport';
 import mogran from 'morgan';
 
+// Import Models[pastas]
+import passportConfig from './config/passport';
 import routes from './routes';
 
 const app = express();
 
 app.use(express.json());
 
+// Morgan
 app.use(mogran('dev'));
+
+// Session
+app.use(session({
+     secret: '*C0ff³r#Hub*',
+     resave: true,
+     saveUninitialized: true,	
+}));
+
+// PassPort
+passportConfig(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use((req, res, next) => {
+     console.log(req.session);
+     console.log(req.user);
+     next();
+});
+
+// console.log(passport);
 
 // Body Parser
 app.use(bodyParser.text());

@@ -1,5 +1,6 @@
 'use strict';
 import {Model} from 'sequelize';
+import crypto from "crypto";
 
 export default (sequelize, DataTypes) => {
 
@@ -8,44 +9,26 @@ export default (sequelize, DataTypes) => {
   User.init({
     username: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.VIRTUAL,
-    password_hash: DataTypes.STRING,
+    password: DataTypes.STRING,
+    password_key: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
   });
 
-  User.associate = (models) => {
+  User.associate = (models) => { /** define association here */ }
 
-  }
-
-  User.beforeCreate = async (user, options)  => {
-    if (user.password) {
-      const hashedPassword = await bcypt.hash(user.password, 10);
-      return user.password_hash = hashedPassword;
-    } else {
-      throw new Error();
-    }
-  };
-
-  // Allows to log in with a name(username) or email
-  User.findByLogin = async (login) => {
-    let user = await User.findOne({
-      where: { username: login },
-    });
-
-    if (!user) {
-      user = await User.findOne({
-        where: { email: login },
-      });
-    }
-    return user;
-  };
-
-  User.comparePassword = (paswd, cb) => {
-    bcypt.compare(paswd, this.password, function (err, isMatch) {
-      return err ? cb(err) : cb(null, isMatch);
-    });
+  User.beforeCreate(async (user, options)  => {
+    const saltHash = await crypto.randomBytes(32).toString();
+    const hashPassword = await crypto.pbkdf2Sync(user.password, saltHash, 10000, 64, 'sha512').toString('hex');
+    user.password = hashPassword;
+    user.password_key = saltHash;
+  });
+  
+  User.comparePassword = async (password, user) => {
+    console.log('\n\n\n\n tt \n\n\n\n');
+    const hashVerify = await crypto.pbkdf2Sync(password, user.password_key, 10000, 64, 'sha512').toString('hex');
+    return user.password_hash === hashVerify;
   }
 
   return User;
