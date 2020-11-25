@@ -1,11 +1,22 @@
-const router = require('express').Router();
-const UserController = require('../controllers/UserController');
+import {Router} from 'express';
+import UserController from '../controllers/UserController';
+import { isAuthenticated, authenticateLogin, authenticateRegister } from '../config/auth';
 
-router.get('/', UserController.index);
-router.get('/view/:id', UserController.view);
-router.get('/update/:id', UserController.viewUpdate);
-router.post('/create', UserController.create);
-router.put('/update/:id', UserController.update);
-router.delete('/delete/:id', UserController.delete);
+const router = Router();
 
-module.exports = router;
+// Rotas Get
+router.get('/', UserController.getIndex);
+router.get('/about', UserController.getAbout);
+router.get('/contact', UserController.getContact);
+router.get('/login', UserController.getLogin);
+router.get('/register', UserController.getRegister);
+router.get('/logout', UserController.getLogout);
+
+// Rota autenticada
+router.get('/auth', isAuthenticated, UserController.getAuth);
+
+// Rotas Post
+router.post('/register', authenticateRegister);
+router.post('/login', authenticateLogin);
+
+export default router;
