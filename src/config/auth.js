@@ -3,7 +3,12 @@ import passport from 'passport';
 
 const isAuthenticated = (req, res, next) => {
      if (req.isAuthenticated()) return next();
-     return res.redirect('/'); // ADD rota de retorno caso não autenticado
+     return res.redirect('/login'); // ADD rota de retorno caso não autenticado
+}
+ 
+const isNotAuthenticated = (req, res, next) => {
+     if (!req.isAuthenticated()) return next();
+     return res.redirect('/auth'); // ADD rota de retorno caso não autenticado
 }
  
 const authenticateLogin = passport.authenticate('local-login' , {
@@ -16,4 +21,9 @@ const authenticateRegister = passport.authenticate('local-register', {
      failureRedirect: '/register', // ADD rota de falha no register
 });
 
-export { isAuthenticated, authenticateLogin, authenticateRegister };
+export { 
+     isAuthenticated, 
+     isNotAuthenticated, 
+     authenticateLogin, 
+     authenticateRegister 
+};
