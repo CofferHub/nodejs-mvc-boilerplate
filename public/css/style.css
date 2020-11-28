@@ -1,0 +1,28 @@
+.blue-coffer-hub { background-color: rgb(11, 50, 119) !important;}
+     
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main { flex: 1 0 auto; }
+
+.mg-tp-0 { margin-top: 0;}
+.pd-tp-0 { padding-top: 0;}
+
+.box-img-logo {  text-align: center; }
+
+.box-img-logo img {
+    border-radius: 1em;
+    width: 100px;
+}
+.box-img-logo-mini a {
+    top: 17px;
+    line-height: 100%;
+}
+.box-img-logo-mini img {
+    border-radius: 0.2em;
+    border: 1px solid antiquewhite;
+    width: 32px;
+}

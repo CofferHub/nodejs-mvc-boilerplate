@@ -9,31 +9,31 @@
             <form action="" method="post">
                 <div class="row">
                         <div class="input-field col s12">
-                            <input id="name" type="text" class="validate" valide>
-                            <label for="name">Name</label>
+                            <input id="name" type="text" name="name" required/>
+                            <label for="name" class="grey-text text-darken-4">Name</label>
                         </div>
                 </div>
                 <div class="row">
                         <div class="input-field col s12">
-                            <input id="email" type="email" class="validate" valide>
-                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" required/>
+                            <label for="email" class="grey-text text-darken-4">Email</label>
                         </div>
                 </div>
                 <div class="row">
                         <div class="input-field col s12">
-                            <input id="subject" type="text" class="validate" validate>
-                            <label for="subject">Subject</label>
+                            <input id="subject" type="text" name="subject" required/>
+                            <label for="subject" class="grey-text text-darken-4">Subject</label>
                         </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="body" class="materialize-textarea" data-length="120"></textarea>
-                        <label for="body">Body</label>
+                        <textarea id="body" class="materialize-textarea" name="body" data-length="120" required></textarea>
+                        <label for="body" class="grey-text text-darken-4">Body</label>
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light col s12 btn-large blue-coffer-hub " type="submit" name="action">
+                    <button class="btn waves-effect waves-light col s12 btn-large blue-coffer-hub " type="submit">
                         Submit
                     </button>
                 </div>
@@ -42,9 +42,3 @@
     </div>
 
 </section>
-
-<script>
-    $(document).ready(function() {
-        M.textareaAutoResize($('textarea#body').val())
-    });
-</script>

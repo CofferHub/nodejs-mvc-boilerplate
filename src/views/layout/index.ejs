@@ -1,63 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/css/materialize.min.css">
-    <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
-    <title></title>
-    <style>
-
-        .blue-coffer-hub { background-color: rgb(11, 50, 119) !important;}
-     
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-
-        main { flex: 1 0 auto; }
-
-        .mg-tp-0 { margin-top: 0;}
-        .pd-tp-0 { padding-top: 0;}
-
-        .box-img-logo {  text-align: center; }
-
-        .box-img-logo img {
-            border-radius: 1em;
-            width: 100px;
-        }
-        .box-img-logo-mini a {
-            top: 7px;
-            line-height: 100%;
-        }
-        .box-img-logo-mini img {
-            border-radius: 0.3em;
-            border: 2px solid antiquewhite;
-            width: 50px;
-        }
-    </style>
+    <%- include('_partials/_head.ejs'); %>
 </head>
+    <body>
+        <header>
+            <%- include('_partials/_header.ejs'); %>
+        </header>
 
-<body>
+        <main>
+            <div class="container">
+                <%- body %>
+            </div>
+        </main>
 
-    <header>
-        <%- include('_partials/_header'); -%>
-    </header>
+        <footer>
+            <%- include('_partials/_footer.ejs'); %>
+        </footer>
 
-    <main>
-        <div class="container">
-            <%- body %>
-        </div>
-    </main>
-
-    <footer>
-        <%- include('_partials/_footer'); -%>
-    </footer>
-
-    <script src="/js/materialize.min.js"></script>
-</body>
-
+        <script src="/js/materialize.min.js"></script>
+        <script src="/scripts/script.js"></script>
+    </body>
 </html>
