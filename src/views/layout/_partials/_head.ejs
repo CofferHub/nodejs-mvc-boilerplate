@@ -1,0 +1,46 @@
+<% 
+     const config = {
+          title: 'MVC Boilerplate',
+          decription: 'Description here ...',
+          abstract: 'Dbstract description here ...',
+          keywords: 'MVC,  Boilerplate, MVC Boilerplate, node, sequelize, mysql, express, passport, ejs',
+          siteUrl: 'https://github.com/CofferHub/nodejs-mvc-boilerplate',
+          imageUrl: '#',
+     }
+%> 
+
+<meta charset="UTF-8"/>
+
+<meta name="description" content="<%= config.decription %>"/>
+<meta name="abstract" content="<%= config.abstract %>"> 
+<meta name="keywords" content="<%= config.keywords %>"/>
+<meta name="author" content="CofferHub"/>
+<meta name="copyright" content="CofferHub"/>
+<meta name="robots" content="index, follow"/>
+<meta name="language" content="English"/>
+<meta name="distribution" content="global">
+<meta name="rating" content="general">
+<meta name="revisit-after" content="7 days">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%= config.siteUrl %>">
+<meta property="og:title" content="<%= config.title %>">
+<meta property="og:description" content="<%= config.decription %>">
+<meta property="og:image" content="<%= config.imageUrl %>">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="<%= config.siteUrl %>">
+<meta property="twitter:title" content="<%= config.title %>">
+<meta property="twitter:description" content="<%= config.decription %>">
+<meta property="twitter:image" content="<%= config.imageUrl %>">
+
+<meta name="title" content="<%= config.title %>">
+<title><%= config.title %></title>
+
+<link rel="stylesheet" href="/css/materialize.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
