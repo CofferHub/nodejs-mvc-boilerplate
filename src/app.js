@@ -31,14 +31,6 @@ passportConfig(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-     console.log(req.session);
-     console.log(req.user);
-     next();
-});
-
-// console.log(passport);
-
 // Body Parser
 app.use(bodyParser.text());
 app.use(bodyParser.json());

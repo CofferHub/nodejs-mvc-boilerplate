@@ -1,6 +1,11 @@
 import {Router} from 'express';
 import UserController from '../controllers/UserController';
-import { isAuthenticated, authenticateLogin, authenticateRegister } from '../config/auth';
+import { 
+     isAuthenticated, 
+     isNotAuthenticated, 
+     authenticateLogin, 
+     authenticateRegister 
+} from '../config/auth';
 
 const router = Router();
 
@@ -8,8 +13,9 @@ const router = Router();
 router.get('/', UserController.getIndex);
 router.get('/about', UserController.getAbout);
 router.get('/contact', UserController.getContact);
-router.get('/login', UserController.getLogin);
-router.get('/register', UserController.getRegister);
+
+router.get('/login', isNotAuthenticated, UserController.getLogin);
+router.get('/register', isNotAuthenticated, UserController.getRegister);
 router.get('/logout', UserController.getLogout);
 
 // Rota autenticada

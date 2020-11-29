@@ -10,16 +10,16 @@ export default ( passport ) => {
             passwordField: 'password' 
         },
         (email, password, done) => {
-            User.findOne({ email })
+            User.findOne({ where: {email} })
                 .then(user => {
                     if (!user) { return done( null, false, {message: ''})}
 
                     if (User.comparePassword(password, user)) 
                         return done(null, user);
                     else 
-                        return done( null, false, {message: ''});
+                        return done(null, false, {message: ''});
                 })
-                .catch(err =>  done( null, false, {message: ''}));
+                .catch(err => done(null, false, {message: ''}));
         }
     ));
 
@@ -32,8 +32,8 @@ export default ( passport ) => {
         (req, email, password, done) => {
             const {username} = req.body;
             User.create({username, email, password})
-                .then((user) => done(null, user))
-                .catch((err) => done(null, false, {message: ''}));
+                .then(user => done(null, user))
+                .catch(err => done(null, false, {message: ''}));
         }
     ));
     
