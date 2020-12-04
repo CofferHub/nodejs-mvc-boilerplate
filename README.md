@@ -17,10 +17,18 @@
 * [Contact](#contact)
 
 ## General info
+
 The main purpose of the project was to create a NodeJS template with a MVC Design Pattern.
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="./doc/desktop-1.png" width="450px" />
+  <img src="./doc/desktop-2.png" width="450px" />
+  <img src="./doc/desktop-3.png" width="450px" />
+  <img src="./doc/desktop-4.png" width="450px" />
+  <img src="./doc/desktop-5.png" width="450px" />
+</div>
 
 ## Technologies
 
