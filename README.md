@@ -24,12 +24,12 @@ The main purpose of the project was to create a NodeJS with a MVC Design Pattern
 
 ## Technologies
 
-* NodeJS - >= 13.0v
-* Express Framework - >= ^4.17.1v;
-* ORM: Sequelize - >= ^5.22.3v;
-* BD: MySql >= 8.0.21v;
-* Template engine: EJS >= ^3.1.5v;
-* Front-end framework: MaterializeCss - ^1.0.0-rc.2v
+* NodeJS - >= 13.0
+* Express Framework - >= ^4.17.1
+* ORM: Sequelize - >= ^5.22.3
+* BD: MySql >= 8.0.21
+* Template engine: EJS >= ^3.1.5
+* Front-end framework: MaterializeCss - ^1.0.0-rc.2
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
