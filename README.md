@@ -10,6 +10,7 @@
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
+* [Structure](#structure)
 * [Setup](#setup)
 * [Features](#features)
 * [Status](#status)
@@ -22,7 +23,7 @@ The main purpose of the project was to create a NodeJS template with a MVC Desig
 
 ## Screenshots
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; justify-content: space-between; align-self: center;">
   <img src="./doc/desktop-1.png" width="450px" />
   <img src="./doc/desktop-2.png" width="450px" />
   <img src="./doc/desktop-3.png" width="450px" />
@@ -40,7 +41,75 @@ The main purpose of the project was to create a NodeJS template with a MVC Desig
 * Front-end framework: MaterializeCss - ^1.0.0-rc.2
 
 ## Setup
+
 Describe how to install / setup your local environement / add link to demo version.
+
+## Structure
+
+├── bin
+│   └── www
+│
+├── dist
+│
+├── public
+│   ├── css
+│   │   └── style.css
+│   ├── img
+│   │   └── favicon.ico
+│   └── scrits
+│       └── script.js
+│
+├── src
+│   ├── config
+│   │   ├── auth.js
+│   │   └── passport.js
+│   │
+│   ├── controllers
+│   │   └── UserController.js
+│   │
+│   ├── database
+│   │   ├── config
+│   │   │   └── database.js
+│   │   ├── migrations
+│   │   └── seeders
+│   │
+│   ├── models
+│   │   ├── index.js
+│   │   └── User.js
+│   │
+│   ├── routes
+│   │   └── index.js
+│   │
+│   ├── views
+│   │   ├── err
+│   │   │   └── index.js
+│   │   ├── layout
+│   │   │   ├── _partials
+│   │   │   │   ├── _footer.js
+│   │   │   │   ├── _head.js
+│   │   │   │   └── _header.js
+│   │   │   └── index.js
+│   │   └── page
+│   │       ├── about.js
+│   │       ├── auth.js
+│   │       ├── contact.js
+│   │       ├── index.js
+│   │       ├── login.js
+│   │       └── register.js
+│   │
+│   └── app.js
+│
+├── test
+│   ├── sum.js
+│   └──  sum.test.js
+│
+├── .editorConfig
+├── .eslintrc.json
+├── .sequelizerc
+├── jest.config.json
+├── LICENSE
+├── package.json
+└── README.md
 
 ## Code Examples
 Show examples of usage:
