@@ -17,18 +17,19 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+The main purpose of the project was to create a NodeJS with a MVC Design Pattern.
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
 
-* Node framework: Express - version x.x;
-* ORM: Sequelize - version x.x;
-* BD: MySql - version x.x;
-* Template engine: EJS - version x.x;
-* Front-end framework: MaterializeCss - version x.x.
+* NodeJS - >= 13.0v
+* Express Framework - >= ^4.17.1v;
+* ORM: Sequelize - >= ^5.22.3v;
+* BD: MySql >= 8.0.21v;
+* Template engine: EJS >= ^3.1.5v;
+* Front-end framework: MaterializeCss - ^1.0.0-rc.2v
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
