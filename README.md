@@ -24,7 +24,7 @@ The main purpose of the project was to create a NodeJS template with a MVC Desig
 ## Screenshots
 
 <div style="display: flex; justify-content: space-between; align-self: center;">
-  <img src="./doc/desktop-1.png" width="180px" />
+  <img src="./doc/desktop-1.png" width="800px" />
   <img src="./doc/desktop-2.png" width="180px" />
   <img src="./doc/desktop-3.png" width="180px" />
   <img src="./doc/desktop-4.png" width="180px" />
