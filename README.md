@@ -4,7 +4,7 @@
 
 <span>Photo by <a href="https://unsplash.com/@jefferyho?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jeffery Ho</a> on <a href="https://unsplash.com/s/photos/architecture-green?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
-> Here goes your awesome project description!
+> A boilerplate of NodeJS with MVC architecture using sequelizeORM.
 
 ## Table of contents
 * [General info](#general-info)
