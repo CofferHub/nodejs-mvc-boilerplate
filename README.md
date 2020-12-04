@@ -46,6 +46,7 @@ Describe how to install / setup your local environement / add link to demo versi
 
 ## Structure
 
+```
 ├── bin
 │   └── www
 │
@@ -110,6 +111,7 @@ Describe how to install / setup your local environement / add link to demo versi
 ├── LICENSE
 ├── package.json
 └── README.md
+```
 
 ## Code Examples
 Show examples of usage:
