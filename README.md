@@ -127,11 +127,5 @@ To-do list:
 * Wow improvement to be done 1
 * Wow improvement to be done 2
 
-## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
-
-## Inspiration
-Add here credits. Project inspired by..., based on...
-
 ## Contact
 Created by [CofferHub](https://github.com/CofferHub) - feel free to contact us!
