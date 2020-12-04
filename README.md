@@ -17,7 +17,7 @@
 * [Contact](#contact)
 
 ## General info
-The main purpose of the project was to create a NodeJS with a MVC Design Pattern.
+The main purpose of the project was to create a NodeJS template with a MVC Design Pattern.
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
