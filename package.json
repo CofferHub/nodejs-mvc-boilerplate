@@ -43,7 +43,7 @@
     "sucrase": "^3.17.1"
   },
   "devDependencies": {
-    "eslint": "^7.20.0",
+    "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
     "jest": "^26.6.3",
