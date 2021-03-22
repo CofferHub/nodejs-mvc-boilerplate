@@ -39,7 +39,7 @@
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.22.3",
+    "sequelize": "^6.6.1",
     "sucrase": "^3.17.1"
   },
   "devDependencies": {
