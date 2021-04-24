@@ -15,16 +15,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AtilaAssuncao/node-mvc-template.git"
+    "url": "git+https://github.com/CofferHub/nodejs-mvc-boilerplate.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AtilaAssuncao/node-mvc-template/issues"
+    "url": "https://github.com/CofferHub/nodejs-mvc-boilerplate/issues"
   },
-  "homepage": "https://github.com/AtilaAssuncao/node-mvc-template#readme",
+  "homepage": "https://github.com/CofferHub/nodejs-mvc-boilerplate#readme",
   "dependencies": {
-     "bcryptjs": "^2.4.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
