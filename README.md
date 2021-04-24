@@ -33,7 +33,7 @@ The main purpose of the project was to create a NodeJS template with a MVC Desig
 
 * NodeJS - >= 13.0
 * Express Framework - >= ^4.17.1
-* ORM: Sequelize - >= ^5.22.3
+* ORM: Sequelize - >= ^6.6.2
 * BD: MySql >= 8.0.21
 * Template engine: EJS >= ^3.1.5
 * Front-end framework: MaterializeCss - ^1.0.0-rc.2
