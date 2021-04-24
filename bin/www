@@ -2,11 +2,11 @@
 
 require('dotenv').config();
 
-const ENV = process.ENV.NODE_ENV || 'development';
+const ENV = process.env.NODE_ENV || 'development';
 const PORT =  process.env.PORT || 3000;
 
 const http = require('http');
-const app = env === 'development' 
+const app = ENV === 'development' 
   ? require('../src/app') 
   : require('../dist/app');
 

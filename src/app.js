@@ -21,7 +21,7 @@ app.use(mogran('dev'));
 
 // Session
 app.use(session({
-     secret: '*C0ff³r#Hub*',
+     secret: process.env.SESSION_SECRET_KEY,
      resave: true,
      saveUninitialized: true,	
 }));

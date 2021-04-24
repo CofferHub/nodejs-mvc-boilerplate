@@ -25,4 +25,8 @@ router.get('/auth', isAuthenticated, UserController.getAuth);
 router.post('/register', authenticateRegister);
 router.post('/login', authenticateLogin);
 
+router.get('/error', (req,res) => {
+     throw new Error('Erro Interno');
+})
+
 export default router;

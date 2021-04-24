@@ -1,12 +1,20 @@
-<section class="err-error">
+<!-- <section class="err-error">
     <div class="alert alert-danger">
-        <%= message %> 
+        <%= message %>
     </div>
+    <p>
+        <%= error.status %>
+    </p>
+</section> -->
 
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-</section>
+<h1> <%= message + ' ' + error.status %><span>:(</span></h1>
+<p>Sorry, but the page you were trying to view does not exist.</p>
+<p>It looks like this was the result of either:</p>
+<ul>
+<li>a mistyped address</li>
+<li>an out-of-date link</li>
+</ul>
+<script>
+var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
+</script>
+<script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
