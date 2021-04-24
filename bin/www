@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const env = process.env.NODE_ENV || 'development';
+require('dotenv').config();
+
+const ENV = process.ENV.NODE_ENV || 'development';
 const PORT =  process.env.PORT || 3000;
 
 const http = require('http');
