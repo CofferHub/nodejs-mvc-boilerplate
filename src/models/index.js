@@ -6,7 +6,7 @@ import Sequelize from 'sequelize';
 import configDB from './../database/config/database';
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = configDB[env];
+const config = configDB()[env];
 
 const db = {};
 
@@ -30,7 +30,6 @@ fs
   })
   .forEach(file => {
     const model = require(path.join(__dirname, file)).default(sequelize, Sequelize.DataTypes);
-    // const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
     db[model.name] = model;
   });
 
