@@ -11,43 +11,48 @@ import mogran from 'morgan';
 // Import Models[pastas]
 import passportConfig from './config/passport';
 import routes from './routes';
+class App {
 
-const app = express();
+     constructor() {
+          this.app = express();
 
-app.use(express.json());
+          this.middlewares();
+          this.service();
+          this.engine();
+          this.statics();
+          this.routes();
+     }
 
-// Morgan
-app.use(mogran('dev'));
+     middlewares() {
+          this.app.use(express.json());
+          this.app.use(mogran('dev'));
+          this.app.use(session({
+               secret: process.env.SESSION_SECRET_KEY,
+               resave: true,
+               saveUninitialized: true,	
+          }));
+     }
 
-// Session
-app.use(session({
-     secret: '*C0ff³r#Hub*',
-     resave: true,
-     saveUninitialized: true,	
-}));
+     service() {
+          passportConfig(passport);
+          this.app.use(passport.initialize());
+          this.app.use(passport.session());
+     }
 
-// PassPort
-passportConfig(passport);
-app.use(passport.initialize());
-app.use(passport.session());
+     engine() {
+          this.app.use(ejsLayouts);
+          this.app.set('views', path.join( __dirname, 'views'));
+          this.app.set('view engine', 'ejs');
+     }
 
-// Body Parser
-app.use(bodyParser.text());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+     statics() {   
+          this.app.use(express.static(path.join( __dirname, '..','public')));
+          this.app.use(express.static(path.join(__dirname , '..', 'node_modules', 'materialize-css', 'dist')));
+     }
 
-// view engine setup
-app.use( ejsLayouts );
-app.set( 'views', path.join( __dirname, 'views' ));
-app.set( 'view engine', 'ejs' );
+     routes() {
+          this.app.use(routes);
+     }
+}
 
-// static files
-app.use(express.static(path.join( __dirname, '..','public')));
-
-// Materialize
-app.use(express.static(path.join(__dirname , '..', 'node_modules', 'materialize-css', 'dist')));
-
-// Rotas
-app.use(routes);
-
-export default app;
+export default new App().app;
